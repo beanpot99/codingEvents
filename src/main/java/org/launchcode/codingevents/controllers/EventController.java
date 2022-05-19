@@ -14,22 +14,26 @@ import java.util.List;
 @Controller
 @RequestMapping("events")
 public class EventController {
+
     private static List<String> events = new ArrayList<>();
-    //making this static so it is viewable at class level
+
     @GetMapping
-    public String displayAllEvents(Model model){
+    public String displayAllEvents(Model model) {
+        model.addAttribute("title", "All Events");
         model.addAttribute("events", events);
         return "events/index";
     }
 
     @GetMapping("create")
-    public String renderCreateEvent(){
+    public String displayCreateEventForm(Model model) {
+        model.addAttribute("title", "Create Event");
         return "events/create";
     }
+
     @PostMapping("create")
-    public String createEvent(@RequestParam String eventName){
-        //we have our string that our user gave us and now we want to POST it
+    public String processCreateEventForm(@RequestParam String eventName) {
         events.add(eventName);
-        return "redirect: "; //redirects them to root path, a
+        return "redirect:";
     }
+
 }
