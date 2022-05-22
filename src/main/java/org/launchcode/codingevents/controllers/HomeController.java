@@ -11,3 +11,4 @@ public class HomeController {
         return "index";
     }
 }
+//this is the default page which displays our main index

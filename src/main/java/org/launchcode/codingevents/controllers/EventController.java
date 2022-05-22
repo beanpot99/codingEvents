@@ -13,7 +13,7 @@ import java.util.List;
 @Controller
 @RequestMapping("events")
 public class EventController {
-
+//this class executes whenever it is at :/events
 
 
     @GetMapping
@@ -51,5 +51,21 @@ public class EventController {
             }
         }
         return "redirect:"; //redirect back to event listings back to root path (:)
+    }
+    @GetMapping("edit/{eventId}")
+    public String displayEditForm(Model model, @PathVariable int eventId){
+        Event eventToEdit = EventData.getById(eventId);
+        model.addAttribute(eventToEdit);
+        String title="Edit Event " + eventToEdit.getName() + " (id=" +eventToEdit.getId() + ")";
+        model.addAttribute("title", title);
+        return "events/edit";
+
+    }
+    @PostMapping("edit")
+    public String processEditForm(int eventId, String name, String description){
+        Event eventToEdit = EventData.getById(eventId);
+        eventToEdit.setName(name);
+        eventToEdit.setDescription(description);
+        return "redirect:";
     }
 }
