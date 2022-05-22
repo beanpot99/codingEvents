@@ -7,15 +7,40 @@
 <header th:replace="fragments :: header"></header>
 
 <form method="post" >
-    <div class="form-group"></div>
-    <lablel>
+    <div class="container mt-4" id="formContainer">
+    <div class="form-group  justify-content-start">
+    <fieldset>
     <input type="text" name="eventName" class="form-control">
-    </lablel>
+        <legend class="form-text text-muted"style="font-size:12px" >Event name</legend>
+    </fieldset>
     </div>
-    <div class="form-group"></div>
+    <div class="form-group justify-content-start">
+    <fieldset>
+        <input type="text" name="eventDescription" class="form-control">
+        <legend class="form-text text-muted" style="font-size:12px" >Event description</legend>
+    </fieldset>
+    </div>
+        <div class="form-group justify-content-start">
+            <fieldset>
+                <input type="text" name="address" class="form-control">
+                <legend class="form-text text-muted" style="font-size:12px" >Address</legend>
+            </fieldset>
+        </div>
+        <!--<! –– <div class="custom-file col-4 mb-4" id="customFileDiv">
+            <input type="file" class="custom-file-input" id="imagePath" name="imagePath">
+            <label class="custom-file-label" for="imagePath" id="fileLabel">Chose image</label>
+        </div> ––>-->
+        <div class="form-group justify-content-start">
+            <fieldset>
+                <input type="text" name="imagePath" class="form-control">
+                <legend class="form-text text-muted" style="font-size:12px" >Image</legend>
+            </fieldset>
+        </div>
+    <div class="form-group">
 
     <input type="submit" value="Create Event!" class="btn btn-success">
 
+    </div>
     </div>
 </form>
 </body>
