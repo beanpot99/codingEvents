@@ -1,16 +1,21 @@
 package org.launchcode.codingevents.models;
 
+import org.springframework.validation.annotation.Validated;
+
 import java.util.Objects;
 
 public class Event {
     private String name;
     private String description;
+    @NotBlank(message="Location can't be left blank!")
+    private String location;
     private int id;
     private static int nextId=1;
 
-    public Event(String name, String description){
+    public Event(String name, String description, String location){
         this.name=name;
         this.description=description;
+        this.location=location;
         this.id=nextId;
         nextId++;
     }
@@ -36,6 +41,9 @@ public class Event {
         return id;
     }
 
+    public String getLocation() {
+        return location;
+    }
 
     @Override
     public String toString(){
