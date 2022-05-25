@@ -11,11 +11,34 @@
     <lablel>Name
     <input type="text" name="name" class="form-control">
     </lablel>
+    <p class="error" th:errors="${event.name}"></p>
     </div>
     <div class="form-group"></div>
     <lablel>Event Description
         <input type="text" name="description" class="form-control">
     </lablel>
+    <p class="error" th:errors="${event.description}"></p>
+    </div>
+    <div class="form-group"></div>
+    <lablel>Number of attendees
+        <input type="number" name="numAttendees" class="form-control">
+    </lablel>
+    <p class="error" th:errors="${event.numAttendees}"></p>
+    </div>
+    <div class="form-group"></div>
+    <lablel>Location information
+        <input type="text" name="location" class="form-control">
+    </lablel>
+    <p class="error" th:errors="${event.location}"></p>
+    </div>
+    <div class="form-group"></div>
+    <lablel>Pre-registration Required
+        <input type="checkbox" id="true"name="mustRegister" value="true"class="form-control">
+        <label for="true">True</label><br>
+        <input type="checkbox" id="false"name="mustRegister" value="false"class="form-control">
+        <label for="false">False</label><br>
+    </lablel>
+    <p class="error" th:errors="${event.mustRegister}"></p>
     </div>
     <div class="form-group"></div>
 
